@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Índice de Massa Corporal</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#context">O que é</a>
+        <a href="#calculator">Calculadora</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>O que é o Índice de Massa Corporal (IMC)</h2>
+            <p>
+                O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela Organização Mundial de Saúde (OMS), para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.
+            </p>
+            <br>
+            <p>
+                Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre 18,5 e 24,9.
+            </p>
+        </section>
+
+        <section id="context">
+            <h2>Contexto do IMC no Brasil</h2>
+            <p>
+                De acordo com o Ministério da Saúde (MS), atualmente 60% dos brasileiros acima de 18 anos apresentam sobrepeso, e um em cada quatro é considerado obeso. O MS, no entanto, aponta algumas exceções em relação ao índice: 1) crianças, adolescentes e idosos (a partir de 60 anos), que possuem composições corporais específicas; 2) pessoas com muita massa magra (músculos) podem ter IMC mais alto, sem estarem com sobrepeso ou obesidade; 3) mesmo sem estar com sobrepeso ou obesidade, a pessoa pode estar com níveis inadequados de colesterol, triglicérides, gordura e açúcar no sangue, por isso é importante realizar exames regulares; 4) mulheres grávidas.
+            </p>
+            <br>
+            <p>
+                Considerada um problema de saúde pública, uma vez que atinge cada vez mais pessoas e está associada ao aumento de risco para doenças cardiovasculares, articulares, hipertensão, diabetes e depressão, entre outras doenças, a obesidade é um problema complexo que envolve uma série de fatores socioambientais. Por isso, a disseminação de informações sobre cuidados com a alimentação e hábitos saudáveis é parte essencial no combate à obesidade.
+            </p>
+        </section>
+        
+        <section id="calculator">
+            <h2>Calcule seu IMC</h2>
+            <label for="altura">Altura</label>
+            <input type="number" name="altura" id="altura">
+
+            <label for="peso">Peso (kg):</label>
+            <input type="number" name="peso" id="peso">
+
+            <button onclick="calcImc()">Calcular IMC</button>
+
+            <p>
+                Seu índice de massa corporal é: 
+            </p>
+
+            <div id="result">
+                <p id="resultado"></p>
+                <img src="./corpo.svg" alt="Corpo humano">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Peterson Costa Trindade | Todos os direitos reservados</p>
+    </footer>
+
+
+    <script>
+        function calcImc() {
+            const altura = document.getElementById("altura").value;
+            const peso = document.getElementById("peso").value;
+            const resultado = peso / (altura**2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2);
+        }
+    </script>
+</body>
+</html>
